@@ -1,0 +1,265 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JLabel;
+import javax.swing.JFormattedTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JSeparator;
+import java.awt.Color;
+import java.awt.Dimension;
+import javax.swing.JRadioButton;
+import javax.swing.JComboBox;
+import com.toedter.calendar.JDateChooser;
+import javax.swing.JTextField;
+
+public class BurekMCSRframe extends JFrame {
+
+	private JPanel contentPane;
+	private final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+	private final JPanel studentPanel = new JPanel();
+	private final JPanel familyPanel = new JPanel();
+	private final JPanel financialPanel = new JPanel();
+	private final JMenuBar menuBar = new JMenuBar();
+	private final JMenu menuFile = new JMenu("File");
+	private final JMenu menuHelp = new JMenu("Help");
+	private final JMenuItem menuItemStartNewForm = new JMenuItem("Start New Form");
+	private final JMenuItem menuItemExit = new JMenuItem("Exit");
+	private final JMenuItem menuItemStudentInfo = new JMenuItem("Student Info");
+	private final JMenuItem menuItemFinancialInfo = new JMenuItem("Financial Info");
+	private final JMenuItem menuItemFamilyInfo = new JMenuItem("Family Info");
+	private final JLabel lblFirstName = new JLabel("First Name");
+	private final JFormattedTextField firstNameFTF = new JFormattedTextField();
+	private final JLabel lblLastName = new JLabel("Last Name");
+	private final JFormattedTextField lastNameFTF = new JFormattedTextField();
+	private final JLabel lblMiddleInitial = new JLabel("Middle Initial");
+	private final JFormattedTextField middleInitialFTF = new JFormattedTextField();
+	private final JLabel lblPreferredName = new JLabel("Preferred Name");
+	private final JFormattedTextField preferredNameFTF = new JFormattedTextField();
+	private final JLabel lblRace = new JLabel("Race (Check all that apply):");
+	private final JCheckBox chckbxBlack = new JCheckBox("Black");
+	private final JCheckBox chckbxWhite = new JCheckBox("White");
+	private final JCheckBox chckbxAsian = new JCheckBox("Asian");
+	private final JCheckBox chckbxHispanic = new JCheckBox("Hispanic");
+	private final JCheckBox chckbxNativeAmerican = new JCheckBox("Native American");
+	private final JCheckBox chckbxOther = new JCheckBox("Other");
+	private final JLabel lblOther = new JLabel("If other, please specify:");
+	private final JFormattedTextField otherFTF = new JFormattedTextField();
+	private final JSeparator separator = new JSeparator();
+	private final JLabel lblGender = new JLabel("Gender");
+	private final JRadioButton radioMale = new JRadioButton("Male");
+	private final JRadioButton radioFemale = new JRadioButton("Female");
+	private final JLabel lblSSN = new JLabel("SS#");
+	private final JFormattedTextField formattedTextField = new JFormattedTextField();
+	private final JLabel lblDateOfBirth = new JLabel("Date of Birth:");
+	private final JLabel lblGrade = new JLabel("Grade");
+	private final JRadioButton radioFifteen = new JRadioButton("15");
+	private final JRadioButton radioSixteen = new JRadioButton("16");
+	private final JLabel lblSubdivision = new JLabel("Subdivision");
+	private final JFormattedTextField subdivisionFTF = new JFormattedTextField();
+	private final JRadioButton radioOwn = new JRadioButton("Own");
+	private final JRadioButton radioLease = new JRadioButton("Lease");
+	private final JLabel lblLeaseExpires = new JLabel("Lease Expires");
+	private final JDateChooser leaseDateChooser = new JDateChooser();
+	private final JLabel lblAddress = new JLabel("Street Address");
+	private final JTextField streetTF = new JTextField();
+	private final JLabel lblCity = new JLabel("City");
+	private final JTextField cityTF = new JTextField();
+	private final JLabel lblZip = new JLabel("ZIP");
+	private final JFormattedTextField zipFTF = new JFormattedTextField();
+	private final JLabel lblHomePhone = new JLabel("Home Phone");
+	private final JFormattedTextField homePhoneFTF = new JFormattedTextField();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					BurekMCSRframe frame = new BurekMCSRframe();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public BurekMCSRframe() {
+		streetTF.setBounds(278, 545, 192, 26);
+		streetTF.setColumns(10);
+		jbInit();
+	}
+	private void jbInit() {
+		setTitle("Burek MCSR Student Registration");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 745, 830);
+		
+		setJMenuBar(menuBar);
+		
+		menuBar.add(menuFile);
+		
+		menuFile.add(menuItemStartNewForm);
+		
+		menuFile.add(menuItemExit);
+		
+		menuBar.add(menuHelp);
+		
+		menuHelp.add(menuItemStudentInfo);
+		
+		menuHelp.add(menuItemFamilyInfo);
+		
+		menuHelp.add(menuItemFinancialInfo);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		tabbedPane.setBounds(0, 0, 723, 755);
+		
+		contentPane.add(tabbedPane);
+		
+		tabbedPane.addTab("Student Information", null, studentPanel, null);
+		studentPanel.setLayout(null);
+		lblFirstName.setBounds(15, 16, 123, 20);
+		
+		studentPanel.add(lblFirstName);
+		firstNameFTF.setBounds(15, 41, 123, 26);
+		
+		studentPanel.add(firstNameFTF);
+		lblLastName.setBounds(15, 82, 123, 20);
+		
+		studentPanel.add(lblLastName);
+		lastNameFTF.setBounds(15, 109, 123, 26);
+		
+		studentPanel.add(lastNameFTF);
+		lblMiddleInitial.setBounds(15, 149, 123, 20);
+		
+		studentPanel.add(lblMiddleInitial);
+		middleInitialFTF.setBounds(15, 175, 37, 26);
+		
+		studentPanel.add(middleInitialFTF);
+		lblPreferredName.setBounds(15, 217, 123, 20);
+		
+		studentPanel.add(lblPreferredName);
+		preferredNameFTF.setBounds(15, 246, 123, 26);
+		
+		studentPanel.add(preferredNameFTF);
+		lblRace.setBounds(15, 369, 200, 20);
+		
+		studentPanel.add(lblRace);
+		chckbxBlack.setBounds(15, 401, 139, 29);
+		
+		studentPanel.add(chckbxBlack);
+		chckbxWhite.setBounds(15, 438, 139, 29);
+		
+		studentPanel.add(chckbxWhite);
+		chckbxAsian.setBounds(15, 475, 139, 29);
+		
+		studentPanel.add(chckbxAsian);
+		chckbxHispanic.setBounds(15, 512, 139, 29);
+		
+		studentPanel.add(chckbxHispanic);
+		chckbxNativeAmerican.setBounds(15, 549, 149, 29);
+		
+		studentPanel.add(chckbxNativeAmerican);
+		chckbxOther.setBounds(15, 586, 139, 29);
+		
+		studentPanel.add(chckbxOther);
+		lblOther.setBounds(15, 627, 188, 20);
+		
+		studentPanel.add(lblOther);
+		otherFTF.setBounds(15, 663, 188, 26);
+		
+		studentPanel.add(otherFTF);
+		separator.setOrientation(SwingConstants.VERTICAL);
+		separator.setBounds(236, 16, 2, 677);
+		
+		studentPanel.add(separator);
+		lblGender.setBounds(278, 16, 96, 20);
+		
+		studentPanel.add(lblGender);
+		radioMale.setBounds(278, 51, 155, 29);
+		
+		studentPanel.add(radioMale);
+		radioFemale.setBounds(278, 90, 155, 29);
+		
+		studentPanel.add(radioFemale);
+		lblSSN.setBounds(15, 291, 123, 20);
+		
+		studentPanel.add(lblSSN);
+		formattedTextField.setBounds(15, 322, 123, 26);
+		
+		studentPanel.add(formattedTextField);
+		lblDateOfBirth.setBounds(278, 131, 104, 20);
+		
+		studentPanel.add(lblDateOfBirth);
+		lblGrade.setBounds(278, 242, 96, 20);
+		
+		studentPanel.add(lblGrade);
+		radioFifteen.setBounds(278, 270, 63, 29);
+		
+		studentPanel.add(radioFifteen);
+		radioSixteen.setBounds(344, 270, 59, 29);
+		
+		studentPanel.add(radioSixteen);
+		lblSubdivision.setBounds(278, 314, 96, 20);
+		
+		studentPanel.add(lblSubdivision);
+		subdivisionFTF.setBounds(278, 350, 130, 26);
+		
+		studentPanel.add(subdivisionFTF);
+		radioOwn.setBounds(278, 388, 84, 29);
+		
+		studentPanel.add(radioOwn);
+		radioLease.setBounds(363, 388, 84, 29);
+		
+		studentPanel.add(radioLease);
+		lblLeaseExpires.setBounds(278, 433, 104, 20);
+		
+		studentPanel.add(lblLeaseExpires);
+		leaseDateChooser.setBounds(278, 473, 119, 26);
+		
+		studentPanel.add(leaseDateChooser);
+		lblAddress.setBounds(278, 515, 118, 20);
+		
+		studentPanel.add(lblAddress);
+		
+		studentPanel.add(streetTF);
+		lblCity.setBounds(278, 586, 118, 20);
+		
+		studentPanel.add(lblCity);
+		cityTF.setColumns(10);
+		cityTF.setBounds(278, 609, 149, 26);
+		
+		studentPanel.add(cityTF);
+		lblZip.setBounds(445, 585, 118, 20);
+		
+		studentPanel.add(lblZip);
+		zipFTF.setBounds(444, 609, 69, 26);
+		
+		studentPanel.add(zipFTF);
+		lblHomePhone.setBounds(525, 16, 118, 20);
+		
+		studentPanel.add(lblHomePhone);
+		homePhoneFTF.setBounds(525, 52, 118, 26);
+		
+		studentPanel.add(homePhoneFTF);
+		
+		tabbedPane.addTab("Family Information", null, familyPanel, null);
+		familyPanel.setLayout(null);
+		
+		tabbedPane.addTab("Financial Information", null, financialPanel, null);
+		financialPanel.setLayout(null);
+	}
+}

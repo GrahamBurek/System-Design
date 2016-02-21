@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\Graham\workspace"/>
+			<item value="C:\Users\Graham\workspace\BurekTabbedPane"/>
+			<item value="C:\Users\Graham\workspace\BurekInputMasks"/>
+			<item value="C:\Users\Graham\workspace\BurekSlidersAndSpinners"/>
+			<item value="C:\Users\Graham\workspace\BurekListExample"/>
+			<item value="C:\Users\Graham\workspace\BurekTextOutput"/>
+			<item value="C:\Users\Graham\workspace\BurekFlashingLabel"/>
+			<item value="C:\Users\Graham\workspace\BurekTest"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+</section>

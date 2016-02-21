@@ -1,0 +1,56 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class BurekSecondFrame extends JFrame {
+
+	private JPanel contentPane;
+	private final JButton btnGoAway = new JButton("Go Away");
+	private final JButton btnNewerFrame = new JButton("Newer Frame");
+
+	/**
+	 * Create the frame.
+	 */
+	public BurekSecondFrame() {
+		jbInit();
+	}
+	private void jbInit() {
+		setTitle("Burek's Second Frame");
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		btnGoAway.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				do_btnGoAway_actionPerformed(e);
+			}
+		});
+		btnGoAway.setBounds(159, 84, 89, 23);
+		
+		contentPane.add(btnGoAway);
+		btnNewerFrame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				do_btnNewerFrame_actionPerformed(e);
+			}
+		});
+		btnNewerFrame.setBounds(145, 161, 116, 23);
+		
+		contentPane.add(btnNewerFrame);
+	}
+
+	protected void do_btnGoAway_actionPerformed(ActionEvent e) {
+		this.dispose();
+	}
+	protected void do_btnNewerFrame_actionPerformed(ActionEvent e) {
+		BurekThirdFrame thirdFrame = new BurekThirdFrame();
+		thirdFrame.setVisible(true);
+	}
+}
